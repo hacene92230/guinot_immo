@@ -1,27 +1,38 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Guinot-immobilier{% endblock %}
+{% block title %}Biens{% endblock %}
 
 {% block body %}
+    <h1>Biens</h1>
 
-/ Accueil
-    <div class = "jumbotron">
-        <br> GUINOT IMMOBILIER:</br>
-        <br> ACCESS LOCATION & VENTE D'APPARTEMENTS</br>
-    </div>
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ bien.id }}</td>
+            </tr>
+            <tr>
+                <th>Titre</th>
+                <td>{{ bien.titre }}</td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>{{ bien.description }}</td>
+            </tr>
+            <tr>
+                <th>Photo</th>
+                <td>{{ bien.photo }}</td>
+            </tr>
+            <tr>
+                <th>CreatedAt</th>
+                <td>{{ bien.CreatedAt ? bien.CreatedAt|date('Y-m-d H:i:s') : '' }}</td>
+            </tr>
+        </tbody>
+    </table>
 
-<div class="container">
+    <a href="{{ path('index') }}">back to list</a>
 
-    <div class="jumbotron">
-  <h1 class="display-3">Hello, world!</h1>
-  <p class="lead">This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</p>
-  <hr class="my-4">
-  <p>It uses utility classes for typography and spacing to space content out within the larger container.</p>
-  <p class="lead">
-    <a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a>
-  </p>
-</div>
+    <a href="{{ path('biens_edit', {'id': bien.id}) }}">edit</a>
 
-</div>
-
+    {{ include('biens/_delete_form.html.twig') }}
 {% endblock %}

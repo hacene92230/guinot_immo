@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <title>
-{% block title %}Guinot-Immobilier !{% endblock %}
+{% block title %}Guinot-Immobilier {% endblock %}
 </title>
 {% block stylesheets %}
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
@@ -20,7 +20,7 @@
 <div class="collapse navbar-collapse" id="navbarColor01">
 <ul class="navbar-nav mr-auto">
 
-<a class="nav-link" href="{{ path('accueil')}}">Accueil <span class="sr-only">(current)</span></a>
+<a class="nav-link" href="{{ path('index')}}">Accueil <span class="sr-only">(current)</span></a>
 </li>
 <li class="nav-item">
 <a class="nav-link" href="{{ path('index')}}">A propos</a>
@@ -47,7 +47,7 @@
 </li>
 
 <li class="nav-item">
-<a class="nav-link" href="{{ path('test')}}">Test</a>
+<a class="nav-link" href="{{ path('index')}}">Test</a>
 </li>
 
 <li class="nav-item">
